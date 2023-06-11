@@ -10,11 +10,16 @@ namespace Oreo.WebAPI.WeatherFish.Pages
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
+
+            this.UserName = "Phil was here!";
         }
 
         public void OnGet()
         {
-
+            ViewData["a"] = "";
         }
+
+        public string? UserName { get; set; }
+
     }
 }
