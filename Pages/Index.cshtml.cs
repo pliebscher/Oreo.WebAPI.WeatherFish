@@ -22,4 +22,47 @@ namespace Oreo.WebAPI.WeatherFish.Pages
         public string? UserName { get; set; }
 
     }
+
+    public abstract class Animal
+    {
+
+        private string _name = "";
+
+        protected Animal(string name) { 
+            _name = string.IsNullOrEmpty(name) ? "I dont have a name :^(" : name;
+        }
+
+        public abstract string Speak();
+
+        public string Name { get { return _name; } }
+
+    }
+
+    public class Dog : Animal
+    {
+        public Dog(string name) : base(name) {
+            
+        }
+
+        public override string Speak()
+        {
+            return "Woof";
+        }
+
+    }
+
+    public class Cat : Animal
+    {
+
+        public Cat(string name) : base(name)
+        {
+
+        }
+
+        public override string Speak()
+        {
+            return "meeeooowwww";
+        }
+    }
+
 }
